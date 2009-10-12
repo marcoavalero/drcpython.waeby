@@ -1,5 +1,9 @@
 grammar Wae
 
+  rule start
+    statement ';'
+  end
+
   rule statement
     terminal / neg / expression
   end
