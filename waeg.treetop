@@ -5,6 +5,9 @@ grammar Wae
     def eval
       statement.eval
     end
+    def name
+      statement.name
+    end
   }
   end
   

@@ -10,10 +10,23 @@ class Runtime
   end
 
   def start
-    while true
-      print 'WAE > '
-      input = gets.chomp
-      puts @wae.parse(input).eval
+    begin
+      while true
+        print 'WAE > '
+        input = gets.chomp
+        puts @wae.parse(input).eval
+      end
+    rescue
+      begin
+        puts @wae.parse(input).name
+        rescue
+        if !input.end_with? ";" then
+          puts "Syntax Error: Missing ';'"
+        else
+          puts "Syntax Error: Unrecognized Token"
+        end
+      end
+      retry
     end
   end
 
